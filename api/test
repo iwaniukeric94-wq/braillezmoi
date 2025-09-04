@@ -1,0 +1,13 @@
+#test.py
+"""
+permet d'exécuter du code python sans avoir à installer python localement.
+Ici, on crée une fonction bonjour qui devra afficher bonjour lorsque l'on l'appellera via un script javascript ou php.
+Ces fichiers stockés dans ce dépôt seront exécutés par l'intermédiaire de Render service connecté à ce dépôt.
+"""
+
+from fastapi import FastAPI
+test = FastAPI()
+
+@test.get("/bonjour")
+async def bonjour():
+	return {"message": "Bonjour, à tous !"}
